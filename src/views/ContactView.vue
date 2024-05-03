@@ -1,5 +1,8 @@
 <template>
-  <NavBar />
+    <NavBar />
+    <div class="contact">
+        <h1>This is a contact page</h1>
+    </div>
 </template>
 
 <script>
@@ -9,10 +12,10 @@ import { defineComponent } from 'vue';
 import NavBar from '../components/NavBar.vue';
 
 export default defineComponent({
-  name: 'HomeView',
+    name: 'ContactView',
 
-  components: {
-    NavBar,
-  },
+    components: {
+        NavBar,
+    },
 });
 </script>
