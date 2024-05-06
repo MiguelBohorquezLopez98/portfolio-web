@@ -1,7 +1,7 @@
 <template>
     <NavBar />
-    <div class="about">
-        <h1>This is an about page</h1>
+    <div class="contact">
+        <h1>This is a contact page</h1>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ import { defineComponent } from 'vue';
 import NavBar from '../components/NavBar.vue';
 
 export default defineComponent({
-    name: 'AboutView',
+    name: 'ContactView',
 
     components: {
         NavBar,

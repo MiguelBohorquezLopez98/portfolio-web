@@ -1,18 +1,51 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <NavBar v-if="!isMobile" />
+    <NavBarResponsive v-else />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { defineComponent } from 'vue';
 
-export default {
+// Components
+import NavBar from '../components/NavBar.vue';
+import NavBarResponsive from '../components/NavBarResponsive.vue';
+
+export default defineComponent({
   name: 'HomeView',
+
   components: {
-    HelloWorld
+    NavBar,
+    NavBarResponsive,
+  },
+
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+
+  computed: {
+    isMobile() {
+      return this.windowWidth <= 600;
+    }
+  },
+
+  methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    }
+  },
+
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
-}
+});
 </script>
+
+<style src="../assets/css/styles.css"></style>
