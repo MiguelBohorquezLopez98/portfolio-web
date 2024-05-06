@@ -1,0 +1,20 @@
+
+@media only screen and (max-width: 600px){
+    .v-overlay {
+        left: 400px !important;
+        top: 50px !important;
+        }
+}
+@media only screen and (max-width: 500px){
+    .v-overlay {
+        left: 300px !important;
+        top: 50px !important;
+        }
+}
+@media only screen and (max-width: 400px){
+    .v-overlay {
+        left: 250px !important;
+        top: 50px !important;
+        }
+}
+
